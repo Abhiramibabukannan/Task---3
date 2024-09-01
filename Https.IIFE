@@ -1,0 +1,189 @@
+1 Quotion
+ a. Print odd numbers in an array:
+
+const printOddNumbers = (arr) => arr.filter(num => num % 2 !== 0).forEach(num => console.log(num));
+
+Example:
+
+printOddNumbers([1, 2, 3, 4, 5, 6]);
+
+Output:
+
+1
+3
+5
+
+b. Convert all the strings into title caps in a string array:
+
+const titleCaps = (arr) => arr.map(str => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase());
+
+Example:
+
+console.log(titleCaps(["hello", "guvi", "abhi"]));
+
+Output:
+
+["Hello", "guvi", "abhi"]
+
+c. Sum of all numbers in an array:
+
+const sumNumbers = (arr) => arr.reduce((a, b) => a + b, 0);
+
+Example:
+
+console.log(sumNumbers([1, 2, 3, 4, 5]));
+
+Output:
+
+15
+
+d. Return all the prime numbers in an array:
+
+(function(arr) {
+    console.log(arr.filter(function(num) {
+        if (num <= 1) return false; // Numbers less than or equal to 1 are not prime
+        for (let i = 2; i * i <= num; i++) {
+            if (num % i === 0) return false; // num is divisible by i, so it's not a prime
+        }
+        return true; // num is a prime number
+    }));
+})([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+
+Output:
+
+
+[2, 3, 5, 7]
+
+
+e. Return all the palindromes in an array:
+
+(function(arr) {
+    console.log(arr.filter(function(num) {
+        const str = num.toString(); // Convert number to string
+        return str === str.split('').reverse().join(''); // Check if the string is a palindrome
+    }));
+})([121, 123, 545, 789, 909]);
+
+Output:
+
+
+[121, 545, 909]
+
+
+f. Return median of two sorted arrays of the same size:
+
+(function(arr1, arr2){
+     const merged = [...arr1, ...arr2].sort((a, b) => a - b);
+ console.log(merged[Math.floor(merged.length / 2)]);
+  })([1, 3, 5], [2, 4, 6]);
+
+Output:
+
+
+3
+
+
+g. Remove duplicates from an array:
+
+(function(arr){ 
+    console.log([...new Set(arr)]);
+     })([1, 2, 2, 3, 4, 4, 5]);
+
+Output:
+
+
+[1, 2, 3, 4, 5]
+
+
+h. Rotate an array by k times:
+
+(function(arr, k){
+     console.log([...arr.slice(k), ...arr.slice(0, k)]); 
+     })([1, 2, 3, 4, 5], 2);
+
+Output:
+
+
+[3, 4, 5, 1, 2]
+
+
+
+
+2.Do the below programs in arrow function
+
+
+a. Print odd numbers in an array:
+
+const printOddNumbers = (arr) => {
+    arr.filter(num => num % 2 !== 0)
+    .forEach(num => console.log(num));
+};
+
+Example:
+
+printOddNumbers([1, 2, 3, 4, 5, 6]);
+
+Output:
+
+1
+3
+5
+
+
+b. Convert all the strings into title caps in a string array:
+
+const titleCaps = (arr) => {
+arr.map(str => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase());
+};
+Example:
+
+console.log(titleCaps(["Mahima", "Abhi", "Vishnu"]));
+
+Output:
+
+["Mahima", "Abhi", "Vishnu"]
+
+
+
+c. Sum of all numbers in an array:
+
+const sumNumbers = (arr) => arr.reduce((a, b) => a + b, 0);
+
+Example:
+
+console.log(sumNumbers([1, 2, 3, 4, 5]));
+
+Output:
+
+15
+
+d. Return all the prime numbers in an array:
+
+const primeNumbers = (arr) => arr.filter(num => { 
+    if (num <= 1) return false; 
+    for (let i = 2; i * i <= num; i++) { 
+        if (num % i === 0) return false;
+         } 
+         return true;
+          });
+
+Example:
+
+console.log(primeNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+
+Output:
+
+[2, 3, 5, 7]
+
+
+e. Return all the palindromes in an array:
+
+const palindromes = (arr) => arr.filter(str => str === str.split('').reverse().join(''));
+
+Example:
+
+console.log(palindromes([121, 123, 545, 789, 909]));
+
+Output:
+
+[121, 545, 909]
